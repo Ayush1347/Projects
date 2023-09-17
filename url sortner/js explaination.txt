@@ -1,0 +1,21 @@
+1.The code defines an asynchronous arrow function called shortenUrl. This function is responsible for shortening the URL and handling the response.
+
+2.The long URL is retrieved from the input field with the id 'long-url' using document.getElementById('long-url').value.
+
+3.A request is made to the https://api.shrtco.de/v2/shorten endpoint using the fetch function. The long URL is passed as a query parameter in the URL using template literals.
+
+4.The response from the API is awaited using the await keyword, and the response data is extracted by calling response.json().
+
+5.The data object contains the shortened URL in the result.full_short_link property.
+
+6.The code then fetches the necessary DOM elements: shortUrlContainer, shortUrlLink, and copyBtn, using their respective id values.
+
+7.The href attribute of the shortUrlLink element is set to the shortUrl value obtained from the API response. This makes the shortened URL clickable.
+
+8.The textContent property of shortUrlLink is also set to the shortUrl, displaying the shortened URL as the link text.
+
+9The shortUrlContainer is displayed on the webpage by setting its style.display property to 'block'.
+
+10.An event listener is added to the copyBtn element to handle the click event. When the button is clicked, the shortened URL is copied to the clipboard using navigator.clipboard.writeText(shortUrl).
+
+11.After the URL is successfully copied, an alert message is displayed to notify the user.
